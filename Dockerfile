@@ -9,8 +9,6 @@ RUN mvn package -DskipTests
 
 FROM eclipse-temurin:17-jre-focal
 
-WORKDIR /app
-
 COPY --from=build /workspace/app/target/*.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]

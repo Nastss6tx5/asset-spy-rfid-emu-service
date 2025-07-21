@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rfid-emu-service
+spec:
+  selector:
+    matchLabels:
+      app: rfid-emu-service
+  template:
+    metadata:
+      labels:
+        app: rfid-emu-service
+    spec:
+      containers:
+        - name: rfid-emu-service
+          image: nastss6tx5/asset-spy-rfid-emu-service:latest
+          ports:
+            - containerPort: 8083
+          envFrom:
+            - configMapRef:
+                name: rfid-emu-service-config
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "300m"

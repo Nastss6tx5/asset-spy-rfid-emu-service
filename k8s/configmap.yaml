@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rfid-emu-service-config
+data:
+  SERVER_PORT: "8083"
+  KAFKA_BOOTSTRAP_SERVERS: "kafka-broker:9092"

@@ -6,7 +6,7 @@ spring:
     name: rfid-emu-service
 
   kafka:
-    bootstrap-servers: kafka-broker:9092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka-broker:9092}
     producer:
       retries: 3
       acks: all
