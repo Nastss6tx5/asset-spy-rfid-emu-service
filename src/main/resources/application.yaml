@@ -1,5 +1,7 @@
 server:
   port: 8083
+  servlet:
+    context-path: /rfid-emu-service
 
 spring:
   application:
@@ -16,4 +18,10 @@ spring:
       retry-backoff-ms: 1000
       enable-idempotence: true
       max-in-flight-request-per-connection: 1
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
 
